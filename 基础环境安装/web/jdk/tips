@@ -1,0 +1,7 @@
+vim /etc/profile
+
+export JAVA_HOME=/home/jdk
+export PATH=$JAVA_HOME/bin
+export CLASSPATH=$JAVA_HOME/lib/
+
+source /etc/profile
