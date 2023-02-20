@@ -18,3 +18,19 @@
 
 # match
 
+
+def what_is(number):
+    match number:
+        case 1:
+            print("one", number)
+        case 2:
+            print("two", number)
+        case 3:
+            print("three", number)
+        case 4:
+            print("four", number)
+        case _:
+            print("other!", number)
+
+
+what_is(2)
