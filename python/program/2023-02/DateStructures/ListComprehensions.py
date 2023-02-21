@@ -9,3 +9,9 @@ squares
 squares = list(map(lambda x: x ** 3, range(10)))
 
 squares = [x ** 4 for x in range(10)]
+
+
+
+from math import pi
+
+[str(round(pi, i)) for i in range(1, 6)]
