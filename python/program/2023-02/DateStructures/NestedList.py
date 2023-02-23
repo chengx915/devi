@@ -16,10 +16,13 @@ anmatrix
 #   [4, 8, 12]
 # ]
 
+unmatrix = list(zip(*matrix))
+unmatrix
+
 
 # matrix与anmatrix相乘
 
-def multmatrix(a, b,):
+def multmatrix(a, b, ):
     c = [[q[p] for q in a] for p in range(len(a))]
     for i in range(len(a)):
         for j in range(len(b[0])):
@@ -29,4 +32,4 @@ def multmatrix(a, b,):
     return c
 
 
-print(multmatrix(matrix, anmatrix))
+print(multmatrix(matrix, unmatrix))
