@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on win32)" generated="20230227 11:27:05.778" rpa="false" schemaversion="3">
+<suite id="s1" name="RestfulBooker" source="D:\project\devil\python\robot\First\Testcase\RestfulBooker.robot">
+<kw name="Authenticate as Admin" type="SETUP">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>username=admin</arg>
+<arg>password=password123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230227 11:27:05.930" level="INFO">${body} = {'username': 'admin', 'password': 'password123'}</msg>
+<status status="PASS" starttime="20230227 11:27:05.930" endtime="20230227 11:27:05.936"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>url=https://restful-booker.herokuapp.com/auth</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20230227 11:27:05.947" level="FAIL">SSLError: HTTPSConnectionPool(host='restful-booker.herokuapp.com', port=443): Max retries exceeded with url: /auth (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1131)')))</msg>
+<status status="FAIL" starttime="20230227 11:27:05.936" endtime="20230227 11:27:05.993"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230227 11:27:05.993" endtime="20230227 11:27:05.993"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${token}</var>
+<arg>${response.json()}[token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230227 11:27:05.993" endtime="20230227 11:27:05.993"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${token}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230227 11:27:05.993" endtime="20230227 11:27:05.993"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${token}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20230227 11:27:05.993" endtime="20230227 11:27:05.993"/>
+</kw>
+<status status="FAIL" starttime="20230227 11:27:05.930" endtime="20230227 11:27:05.993"/>
+</kw>
+<test id="s1-t1" name="Get Bookings from Restful Booker" line="7">
+<status status="FAIL" starttime="20230227 11:27:05.993" endtime="20230227 11:27:05.993">Parent suite setup failed:
+SSLError: HTTPSConnectionPool(host='restful-booker.herokuapp.com', port=443): Max retries exceeded with url: /auth (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1131)')))</status>
+</test>
+<test id="s1-t2" name="Create a Booking at Restful Booker" line="21">
+<status status="FAIL" starttime="20230227 11:27:05.993" endtime="20230227 11:27:05.993">Parent suite setup failed:
+SSLError: HTTPSConnectionPool(host='restful-booker.herokuapp.com', port=443): Max retries exceeded with url: /auth (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1131)')))</status>
+</test>
+<test id="s1-t3" name="Delete Booking" line="34">
+<status status="FAIL" starttime="20230227 11:27:05.993" endtime="20230227 11:27:05.993">Parent suite setup failed:
+SSLError: HTTPSConnectionPool(host='restful-booker.herokuapp.com', port=443): Max retries exceeded with url: /auth (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1131)')))</status>
+</test>
+<status status="FAIL" starttime="20230227 11:27:05.778" endtime="20230227 11:27:05.993">Suite setup failed:
+SSLError: HTTPSConnectionPool(host='restful-booker.herokuapp.com', port=443): Max retries exceeded with url: /auth (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1131)')))</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="RestfulBooker">RestfulBooker</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
